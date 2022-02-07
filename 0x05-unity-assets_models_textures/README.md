@@ -14,3 +14,9 @@
 - How to create UI elements with image components
 - What is a Rigidbody and what is a Character Controller and what are the pros and cons of using each
 - What is a Quaternion
+
+Credits:
+
+[Skyboxes: Farland Skies - Cloudy Crown](https://assetstore.unity.com/?q=Farland%20Skies%20-%20Cloudy%20Crown&orderBy=1)
+
+[Models: Kenney's Nature Pack Extended](https://kenney.nl/assets/nature-pack-extended)
