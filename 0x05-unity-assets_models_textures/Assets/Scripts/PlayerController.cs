@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+/// <summary>
+/// Player Controller
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     private CharacterController characterController;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed = 10f;
     public float playerJumpHeight = 5f;
 
+    // Start is called before the first frame update
     void Start()
     {
         characterController = gameObject.GetComponent<CharacterController>();
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
         Jump();
     }
 
+    // Player movements
     void Movements()
     {
         float x = Input.GetAxis("Horizontal");
@@ -50,6 +54,7 @@ public class PlayerController : MonoBehaviour
         characterController.Move(playerMove * playerSpeed * Time.deltaTime);
     }
 
+    // Player jump
     void Jump()
     {
         // Player jump
@@ -69,6 +74,8 @@ public class PlayerController : MonoBehaviour
         return Physics.CheckSphere(groundCheck.position, 0.4f, groundMask);
     }
 
+    // Check if player fell from the world and then change
+    // his position and reset his velocity
     void FallFromWorld()
     {
         if (characterController.transform.position.y <= fallCheck.position.y)

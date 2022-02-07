@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+/// <summary>
+/// Timer
+/// </summary>
 public class Timer : MonoBehaviour
 {
     public Text timerText;
@@ -15,11 +18,13 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Why putting corouting in Start
         StartCoroutine(InGameTimer());
     }
 
-    // Ok, I don't understand
+    /// <summary>
+    /// Timer
+    /// </summary>
+    /// <returns> null </returns>
     IEnumerator InGameTimer()
     {
         while (true)
@@ -28,7 +33,6 @@ public class Timer : MonoBehaviour
             time += Time.deltaTime;
             minutes = (int)(time / 60 % 60);
             seconds = (int)(time % 60);
-            // Why time - time
             milliseconds = (int)((time - (int)time) * 100);
 
             timerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, milliseconds);

@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Trigger the timer
+/// </summary>
 public class TimerTrigger : MonoBehaviour
 {
     public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
+    // Start enable Timer script
     void OnTriggerExit(Collider other)
     {
         if (other.name == "Player")
@@ -20,5 +19,4 @@ public class TimerTrigger : MonoBehaviour
             GetComponent<TimerTrigger>().enabled = false;
         }
     }
-
 }
