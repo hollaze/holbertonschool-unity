@@ -10,6 +10,7 @@ using System;
 public class Timer : MonoBehaviour
 {
     public Text timerText;
+    public Text winTimerText;
     private float time;
     private float minutes;
     private float seconds;
@@ -19,6 +20,11 @@ public class Timer : MonoBehaviour
     void Start()
     {
         StartCoroutine(InGameTimer());
+    }
+    
+    void Update()
+    {
+        Win();
     }
 
     /// <summary>
@@ -38,6 +44,19 @@ public class Timer : MonoBehaviour
             timerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
 
             yield return null;
+        }
+    }
+
+    /// <summary>
+    /// When player win
+    /// </summary>
+    public void Win()
+    {
+        if (WinTrigger.win)
+        {
+            WinTrigger.win = false;
+            winTimerText.text = timerText.text;
+            timerText.gameObject.SetActive(false);
         }
     }
 }

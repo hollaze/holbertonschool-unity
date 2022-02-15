@@ -10,15 +10,21 @@ public class WinTrigger : MonoBehaviour
 {
     public Text timerText;
     public GameObject player;
-    
-    // Timer stop
+    public GameObject winCanvas;
+    public static bool win = false;
+
+    // Timer stop, activate win canvas
     void OnTriggerEnter(Collider other)
     {
         if (other.name == "Player")
         {
-            timerText.color = Color.green;
-            timerText.fontSize = 60;
+            winCanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
             player.GetComponent<Timer>().StopAllCoroutines();
+
+            win = true;
+            Time.timeScale = 0f;
+            PauseMenu.gameIsPaused = true;
         }
     }
 }
