@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 /// <summary>
 /// Options Menu
@@ -11,13 +12,13 @@ public class OptionsMenu : MonoBehaviour
 {
     public Toggle invertYToggle;
 
-    void FixedUpdate()
+    void Awake()
     {
         if (PlayerPrefs.GetInt("invertYToggleState") == 1)
         {
             invertYToggle.isOn = true;
         }
-        else if (PlayerPrefs.GetInt("invertYToggleState") == 0)
+        if (PlayerPrefs.GetInt("invertYToggleState") == 0)
         {
             invertYToggle.isOn = false;
         }
@@ -35,6 +36,14 @@ public class OptionsMenu : MonoBehaviour
     /// Apply the changes
     /// </summary>
     public void Apply()
+    {
+        toggleOnOff();
+    }
+
+    /// <summary>
+    /// Get toggle on or off
+    /// </summary>
+    public void toggleOnOff()
     {
         if (invertYToggle.isOn)
         {
