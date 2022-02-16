@@ -70,7 +70,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void Options()
     {
-        SceneManager.LoadScene(1);
         PlayerPrefs.SetInt("last_scene", SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
 }
