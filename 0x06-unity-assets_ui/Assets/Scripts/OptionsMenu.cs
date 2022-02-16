@@ -39,12 +39,10 @@ public class OptionsMenu : MonoBehaviour
         if (invertYToggle.isOn)
         {
             PlayerPrefs.SetInt("invertYToggleState", 1);
-            GetComponent<CameraController>().isInverted = true;
         }
         else if (!invertYToggle.isOn)
         {
             PlayerPrefs.SetInt("invertYToggleState", 0);
-            GetComponent<CameraController>().isInverted = false;
         }
     }
 }

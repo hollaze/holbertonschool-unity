@@ -17,11 +17,13 @@ public class CameraController : MonoBehaviour
     {
         MouseX();
 
-        if (!isInverted)
+        // if isInverted == true
+        if (PlayerPrefs.GetInt("invertYToggleState") == 1)
         {
             MouseY();
         }
-        else if (isInverted)
+        // if isInverted == false
+        else if (PlayerPrefs.GetInt("invertYToggleState") == 0)
         {
             MouseYInverted();
         }
