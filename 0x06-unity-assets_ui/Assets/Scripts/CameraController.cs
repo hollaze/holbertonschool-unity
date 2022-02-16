@@ -9,8 +9,8 @@ public class CameraController : MonoBehaviour
 {
     public Transform playerBody;
     public float mouseSensitivity = 150f;
-    public static float xRotation = 0f;
-    public static bool isInverted = false;
+    private float xRotation = 0f;
+    public bool isInverted = false;
 
     // Update is called once per frame
     void Update()

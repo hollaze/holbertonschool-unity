@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Options Menu
+/// </summary>
 public class OptionsMenu : MonoBehaviour
 {
     public Toggle invertYToggle;
@@ -20,22 +23,28 @@ public class OptionsMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Goes back to last scene
+    /// </summary>
     public void Back()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("last_scene"));
     }
 
+    /// <summary>
+    /// Apply the changes
+    /// </summary>
     public void Apply()
     {
         if (invertYToggle.isOn)
         {
             PlayerPrefs.SetInt("invertYToggleState", 1);
-            CameraController.isInverted = true;
+            GetComponent<CameraController>().isInverted = true;
         }
         else if (!invertYToggle.isOn)
         {
             PlayerPrefs.SetInt("invertYToggleState", 0);
-            CameraController.isInverted = false;
+            GetComponent<CameraController>().isInverted = false;
         }
     }
 }
