@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject pauseCanvas;
     public static bool gameIsPaused = false;
 
     void Update()
@@ -31,7 +32,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void Pause()
     {
-        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        pauseCanvas.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         gameIsPaused = true;
@@ -42,7 +43,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void Resume()
     {
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         gameIsPaused = false;
