@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 
         // Rotate player on Y axis when mouse goes
-        // From left to right - mouseX axis
+        // From left to right
         playerBody.Rotate(Vector3.up * mouseX);
     }
 
