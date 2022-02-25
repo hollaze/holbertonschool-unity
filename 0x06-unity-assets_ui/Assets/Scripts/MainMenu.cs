@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(level);
         Cursor.lockState = CursorLockMode.Locked;
-        PlayerPrefs.SetInt("actual_level", level);
     }
 
     /// <summary>
