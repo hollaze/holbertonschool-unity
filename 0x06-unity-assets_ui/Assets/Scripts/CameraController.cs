@@ -8,7 +8,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform playerBody;
-    public float mouseSensitivity = 150f;
+    public float mouseSensitivity = 50f;
     private float xRotation = 0f;
     public bool isInverted = false;
 
