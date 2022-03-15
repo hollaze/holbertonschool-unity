@@ -472,10 +472,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7764799115146764390, guid: 2bb3a8086d025db4ea99badf5f665d09, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7764799115146764391, guid: 2bb3a8086d025db4ea99badf5f665d09, type: 3}
       propertyPath: m_Player
       value: 
@@ -13730,10 +13726,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 328997657522464145, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 328997657522464151, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -13742,46 +13734,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 24203630}
-    - target: {fileID: 328997657522464151, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Options
-      objectReference: {fileID: 0}
-    - target: {fileID: 328997657522464151, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 511488343635280072, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 511488343635280072, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1519326767659343865, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1519326767659343871, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 24203630}
-    - target: {fileID: 1519326767659343871, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 3289610726613268829, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770039901586910482, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3898612963773997282, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3898612963773997284, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -13790,22 +13746,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 24203630}
-    - target: {fileID: 3898612963773997284, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
-      objectReference: {fileID: 0}
-    - target: {fileID: 3898612963773997284, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
     - target: {fileID: 4197217916952783643, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4197217916952783643, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4317413144529572187, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -13814,18 +13758,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 24203630}
-    - target: {fileID: 4317413144529572187, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317413144529572187, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 4317413144529572189, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7963881476581371986, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13910,8 +13842,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2609527588618960239, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d50c4a024a0ac4fa7a628de07e1a39, type: 3}
 --- !u!1 &1752698281165290586 stripped
 GameObject:
@@ -13928,10 +13859,6 @@ PrefabInstance:
     - target: {fileID: 6874112467383201808, guid: 4055d2fc13708674695436b96ca6666c, type: 3}
       propertyPath: m_Name
       value: TimerCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 6874112467383201808, guid: 4055d2fc13708674695436b96ca6666c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6874112467383201820, guid: 4055d2fc13708674695436b96ca6666c, type: 3}
       propertyPath: m_Pivot.x
@@ -14017,10 +13944,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7555875246256411646, guid: 4055d2fc13708674695436b96ca6666c, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 589f88f5b2ff8f3479ee7daa77f8f8e8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4055d2fc13708674695436b96ca6666c, type: 3}
 --- !u!114 &6874112466714094438 stripped
@@ -14129,90 +14052,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7770711222307437493, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 24203630}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Next
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WinMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426024990613314, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1958846785, guid: f92cc96d8f70d91469326761386a2364, type: 3}
     - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 24203630}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Resume
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WinMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273426026242434823, guid: f92cc96d8f70d91469326761386a2364, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92cc96d8f70d91469326761386a2364, type: 3}
 --- !u!114 &7770711224241036022 stripped
