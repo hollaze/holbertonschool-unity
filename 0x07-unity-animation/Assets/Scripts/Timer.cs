@@ -10,7 +10,7 @@ using System;
 public class Timer : MonoBehaviour
 {
     public Text timerText;
-    public Text winTimerText;
+    public Text finalTimeText;
     private float time;
     private float minutes;
     private float seconds;
@@ -55,7 +55,7 @@ public class Timer : MonoBehaviour
         if (WinTrigger.win)
         {
             WinTrigger.win = false;
-            winTimerText.text = timerText.text;
+            finalTimeText.text = timerText.text;
             timerText.gameObject.SetActive(false);
         }
     }

@@ -1,66 +1,53 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Camera Controller
-/// </summary>
 public class CameraController : MonoBehaviour
 {
     public Transform playerBody;
-    public float mouseSensitivity = 50f;
-    private float xRotation = 0f;
+    private Transform camTransform;
     public bool isInverted = false;
+    private float cameraDistance = -6.25f;
+    private float mouseX, mouseY, mouseSensivity = 100f;
 
-    // Update is called once per frame
+    void Awake()
+    {
+        isInverted = (PlayerPrefs.GetInt("invertYToggleState") == 0 ? true : false);
+    }
+
+    void Start()
+    {
+        camTransform = GetComponent<Transform>();
+    }
+
+    void MouseX()
+    {
+        mouseX += Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
+    }
+
+    void MouseY()
+    {
+        mouseY += Input.GetAxis("Mouse Y") * (isInverted ? 1 : -1) * mouseSensivity * 0.6f * Time.deltaTime;
+        mouseY = Mathf.Clamp(mouseY, -2.5f, 30f);
+    }
+
     void Update()
     {
         MouseX();
-
-        // OptionsMenu.cs -> Apply()
-        if (PlayerPrefs.GetInt("invertYToggleState") == 0)
-        {
-            MouseY();
-        }
-        else if (PlayerPrefs.GetInt("invertYToggleState") == 1)
-        {
-            MouseYInverted();
-        }
+        MouseY();
     }
 
-    /// <summary>
-    /// Mouse X rotation
-    /// </summary>
-    public void MouseX()
+    void CameraPositionRotation()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-
-        // Rotate player on Y axis when mouse goes
-        // From left to right
-        playerBody.Rotate(Vector3.up * mouseX);
+        Vector3 dir = new Vector3(0, 0, cameraDistance);
+        Quaternion rotation = Quaternion.Euler(mouseY, mouseX, 0);
+        camTransform.position = playerBody.position + rotation * dir;
+        camTransform.LookAt(playerBody.position);
     }
 
-    /// <summary>
-    /// Mouse Y rotation
-    /// </summary>
-    public void MouseY()
+    private void LateUpdate()
     {
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * 0.6f * Time.deltaTime;
-
-        xRotation = xRotation - mouseY;
-        xRotation = Mathf.Clamp(xRotation, -2.5f, 30f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-    }
-
-    /// <summary>
-    /// Inverted Mouse in Y
-    /// </summary>
-    public void MouseYInverted()
-    {
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * 0.6f * Time.deltaTime;
-
-        xRotation = xRotation + mouseY;
-        xRotation = Mathf.Clamp(xRotation, -2.5f, 30f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        CameraPositionRotation();
     }
 }
