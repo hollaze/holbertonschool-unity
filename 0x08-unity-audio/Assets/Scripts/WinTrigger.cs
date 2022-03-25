@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +9,16 @@ public class WinTrigger : MonoBehaviour
     public Text timerText;
     public GameObject player;
     public GameObject winCanvas;
+    public GameObject BackgroundMusic;
+    private Transform CheeryMonday, VictoryPiano;
     public static bool win = false;
+
+
+    void Start()
+    {
+        CheeryMonday = BackgroundMusic.transform.GetChild(0);
+        VictoryPiano = BackgroundMusic.transform.GetChild(1);
+    }
 
     // Timer stop, activate win canvas
     void OnTriggerEnter(Collider other)
@@ -19,6 +26,8 @@ public class WinTrigger : MonoBehaviour
         if (other.name == "Player")
         {
             winCanvas.SetActive(true);
+            CheeryMonday.gameObject.SetActive(false);
+            VictoryPiano.gameObject.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             player.GetComponent<Timer>().StopAllCoroutines();
 

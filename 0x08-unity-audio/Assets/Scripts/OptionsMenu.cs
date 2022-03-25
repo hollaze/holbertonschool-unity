@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System;
 
 /// <summary>
 /// Options Menu
@@ -11,17 +8,13 @@ using System;
 public class OptionsMenu : MonoBehaviour
 {
     public Toggle invertYToggle;
+    public Slider m_BGMSlider, m_SFXSlider;
+    private string m_BGMVolume = "BGMVolume", m_SFXVolume = "SFXVolume";
 
-    void Awake()
+    private void Awake()
     {
-        if (PlayerPrefs.GetInt("invertYToggleState") == 1)
-        {
-            invertYToggle.isOn = true;
-        }
-        if (PlayerPrefs.GetInt("invertYToggleState") == 0)
-        {
-            invertYToggle.isOn = false;
-        }
+        GetToggleValue();
+        GetSliderValue();
     }
 
     /// <summary>
@@ -37,13 +30,12 @@ public class OptionsMenu : MonoBehaviour
     /// </summary>
     public void Apply()
     {
-        toggleOnOff();
+        SetToggleValue();
+        SetSliderValue();
     }
 
-    /// <summary>
-    /// Get toggle on or off
-    /// </summary>
-    public void toggleOnOff()
+    
+    private void SetToggleValue()
     {
         if (invertYToggle.isOn)
         {
@@ -53,5 +45,29 @@ public class OptionsMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt("invertYToggleState", 0);
         }
+    }
+
+    private void GetToggleValue()
+    {
+        if (PlayerPrefs.GetInt("invertYToggleState") == 1)
+        {
+            invertYToggle.isOn = true;
+        }
+        if (PlayerPrefs.GetInt("invertYToggleState") == 0)
+        {
+            invertYToggle.isOn = false;
+        }
+    }
+
+    private void SetSliderValue()
+    {
+        PlayerPrefs.SetFloat(m_BGMVolume, m_BGMSlider.value);
+        PlayerPrefs.SetFloat(m_SFXVolume, m_SFXSlider.value);
+    }
+
+    private void GetSliderValue()
+    {
+        m_BGMSlider.value = PlayerPrefs.GetFloat(m_BGMVolume, m_BGMSlider.value);
+        m_SFXSlider.value = PlayerPrefs.GetFloat(m_SFXVolume, m_SFXSlider.value);
     }
 }

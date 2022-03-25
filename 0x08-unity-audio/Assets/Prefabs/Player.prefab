@@ -1235,7 +1235,7 @@ AudioSource:
   m_GameObject: {fileID: 4323418754108103239}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 548882595828475806, guid: c9d1d0b538e7fa44bb30ae43eefe4d10, type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1353,7 +1353,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   fallCheck: {fileID: 0}
-  playerAnimator: {fileID: 7373555921931049607}
   gravity: -39.24
   playerSpeed: 10
   playerRotationSpeed: 100
@@ -1370,6 +1369,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e11fd430fa38d4c9a8ff59d73ae0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixerGroups:
+  - {fileID: 548882595828475806, guid: c9d1d0b538e7fa44bb30ae43eefe4d10, type: 2}
+  - {fileID: 2177706074164890245, guid: c9d1d0b538e7fa44bb30ae43eefe4d10, type: 2}
   footstepsAudioClip:
   - {fileID: 8300000, guid: 261f84f0c78929c408f078b5ac9a2601, type: 3}
   - {fileID: 8300000, guid: d6556ebedae5ee24ea762b0ef462953d, type: 3}

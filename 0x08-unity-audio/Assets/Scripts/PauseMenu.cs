@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 /// <summary>
 /// Pause Menu
@@ -10,6 +11,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseCanvas;
+    public AudioMixerSnapshot unPaused, paused;
     public static bool gameIsPaused = false;
 
     void Update()
@@ -36,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         gameIsPaused = true;
+        paused.TransitionTo(0f);
     }
 
     /// <summary>
@@ -47,6 +50,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         gameIsPaused = false;
+        unPaused.TransitionTo(0f);
     }
 
     /// <summary>

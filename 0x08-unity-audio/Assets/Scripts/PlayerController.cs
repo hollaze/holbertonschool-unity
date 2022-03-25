@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System;
 
 /// <summary>
 /// Player Controller
@@ -13,11 +9,11 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     public Transform fallCheck;
-    public Animator playerAnimator;
-    private AnimatorClipInfo[] m_CurrentClipInfo;
+    public static Animator playerAnimator;
+    public static AnimatorClipInfo[] m_CurrentClipInfo;
 
 
-    private string m_ClipName;
+    public static string m_ClipName;
     private Vector3 playerVelocity;
     public float gravity = -9.81f;
     public float playerSpeed = 10f;
@@ -25,10 +21,13 @@ public class PlayerController : MonoBehaviour
     public float playerJumpHeight = 5f;
     private bool playerFell = false;
 
+    public Vector3 playerMove { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
         characterController = gameObject.GetComponent<CharacterController>();
+        playerAnimator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -63,17 +62,22 @@ public class PlayerController : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         // Player movements
-        Vector3 playerMove = transform.forward * z;
+        this.playerMove = transform.forward * z;
         characterController.Move(playerMove * playerSpeed * Time.deltaTime);
 
         characterController.transform.Rotate(Vector3.up * x * playerRotationSpeed * Time.deltaTime);
 
+        isPlayerRunning();
+    }
+
+    void isPlayerRunning()
+    {
         // Player running animation
-        if (playerMove == Vector3.zero && IsGrounded())
+        if (this.playerMove == Vector3.zero && IsGrounded())
         {
             playerAnimator.SetBool("isMoving", false);
         }
-        else if (playerMove.x != 0 || playerMove.z != 0 && IsGrounded())
+        else if (this.playerMove.x != 0 || playerMove.z != 0 && IsGrounded())
         {
             playerAnimator.SetBool("isMoving", true);
         }
@@ -88,6 +92,15 @@ public class PlayerController : MonoBehaviour
             playerVelocity.y = Mathf.Sqrt(playerJumpHeight * -2f * gravity);
         }
 
+        isPlayerJumping();
+
+        // Apply gravity to player
+        playerVelocity.y += gravity * Time.deltaTime;
+        characterController.Move(playerVelocity * Time.deltaTime);
+    }
+
+    void isPlayerJumping()
+    {
         if (!IsGrounded())
         {
             playerAnimator.SetBool("Jumping", true);
@@ -96,10 +109,6 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool("Jumping", false);
         }
-
-        // Apply gravity to player
-        playerVelocity.y += gravity * Time.deltaTime;
-        characterController.Move(playerVelocity * Time.deltaTime);
     }
 
     // Check if player is grounded
@@ -112,7 +121,7 @@ public class PlayerController : MonoBehaviour
     // his position and reset his velocity
     void FallFromWorld()
     {
-        m_CurrentClipInfo = this.playerAnimator.GetCurrentAnimatorClipInfo(0);
+        m_CurrentClipInfo = playerAnimator.GetCurrentAnimatorClipInfo(0);
         m_ClipName = m_CurrentClipInfo[0].clip.name;
 
         if (characterController.transform.position.y <= fallCheck.position.y)
@@ -128,7 +137,7 @@ public class PlayerController : MonoBehaviour
 
         characterController.velocity.Set(0, 0, 0);
 
-        // Stop player from moving on animation
+        // Stop player moving on animation
         if (m_ClipName == "Falling" ||
             m_ClipName == "Falling Flat Impact" ||
             m_ClipName == "Getting Up")

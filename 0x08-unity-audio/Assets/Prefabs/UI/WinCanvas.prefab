@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7770711222307437494}
   - component: {fileID: 7770711222307437495}
   - component: {fileID: 7770711222307437492}
-  - component: {fileID: 1958846785}
   m_Layer: 5
   m_Name: WinCanvas
   m_TagString: Untagged
@@ -101,18 +100,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1958846785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770711222307437493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374dfc73c5a29a844b07dabc2fc8d0a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7770711222432974075
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +190,7 @@ GameObject:
   - component: {fileID: 7770711222719733634}
   - component: {fileID: 7770711222719733647}
   - component: {fileID: 7770711222719733644}
+  - component: {fileID: 3784347545640295635}
   m_Layer: 5
   m_Name: MenuBG
   m_TagString: Untagged
@@ -271,6 +259,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3784347545640295635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7770711222719733635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374dfc73c5a29a844b07dabc2fc8d0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7770711222972185101
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +548,7 @@ PrefabInstance:
     - target: {fileID: 1803130406684298535, guid: f771af24f38288f4bbacbd22a3e6c6d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1958846785}
+      objectReference: {fileID: 3784347545640295635}
     - target: {fileID: 1803130406684298535, guid: f771af24f38288f4bbacbd22a3e6c6d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -694,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 1803130406684298535, guid: f771af24f38288f4bbacbd22a3e6c6d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1958846785}
+      objectReference: {fileID: 3784347545640295635}
     - target: {fileID: 1803130406684298535, guid: f771af24f38288f4bbacbd22a3e6c6d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2

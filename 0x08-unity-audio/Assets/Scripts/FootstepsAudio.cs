@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class FootstepsAudio : MonoBehaviour
 {
+    public AudioMixerGroup[] audioMixerGroups;
     private AudioSource playerAudioSource;
     public AudioClip[] footstepsAudioClip;
     private const string instance = " (Instance)";
     private const string wood = "Wood", green_leafs = "Green_leafs", stone = "Stone";
-
     private string platformColor;
 
 
@@ -21,41 +20,69 @@ public class FootstepsAudio : MonoBehaviour
     void Update()
     {
         FootstepsAudioClip();
+        FootstepsLandingAudioClip();
     }
 
     AudioClip FootstepsAudioClip()
     {
-        try
+        switch (platformColor)
         {
-            switch (platformColor)
-            {
-                case wood + instance:
-                    playerAudioSource.clip = footstepsAudioClip[0];
-                    break;
-                case green_leafs + instance:
-                    playerAudioSource.clip = footstepsAudioClip[0];
-                    break;
-                case stone + instance:
-                    playerAudioSource.clip = footstepsAudioClip[1];
-                    break;
-            }
+            case wood + instance:
+                playerAudioSource.clip = footstepsAudioClip[0];
+                break;
+            case green_leafs + instance:
+                playerAudioSource.clip = footstepsAudioClip[0];
+                break;
+            case stone + instance:
+                playerAudioSource.clip = footstepsAudioClip[1];
+                break;
         }
-        catch (MissingComponentException mce)
-        {
-            Debug.Log(mce);
-        }
-        
+
         return (playerAudioSource.clip);
     }
-    
+
+    AudioClip FootstepsLandingAudioClip()
+    {
+        switch (platformColor)
+        {
+            case wood + instance:
+                playerAudioSource.clip = footstepsAudioClip[2];
+                break;
+            case green_leafs + instance:
+                playerAudioSource.clip = footstepsAudioClip[2];
+                break;
+            case stone + instance:
+                playerAudioSource.clip = footstepsAudioClip[3];
+                break;
+        }
+
+        return (playerAudioSource.clip);
+    }
+
     void PlayAudio()
     {
-        playerAudioSource.PlayOneShot(FootstepsAudioClip());
+        if (PlayerController.m_ClipName == "Falling Flat Impact")
+        {
+            playerAudioSource.outputAudioMixerGroup = audioMixerGroups[1];
+            playerAudioSource.PlayOneShot(FootstepsLandingAudioClip());
+        }
+        else if (PlayerController.m_ClipName == "Running")
+        {
+            playerAudioSource.outputAudioMixerGroup = audioMixerGroups[0];
+            playerAudioSource.PlayOneShot(FootstepsAudioClip());
+        }
     }
 
     // Detect which platform the player is actually touching
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        platformColor = hit.gameObject.GetComponent<MeshRenderer>().material.name;
+        try
+        {
+            platformColor = hit.gameObject.GetComponent<MeshRenderer>().material.name;
+        }
+        catch (MissingComponentException)
+        {
+            // Empty
+        }
     }
 }

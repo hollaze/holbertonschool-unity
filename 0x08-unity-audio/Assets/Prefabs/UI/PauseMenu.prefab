@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 0}
+  unPaused: {fileID: 8785302558929051904, guid: c9d1d0b538e7fa44bb30ae43eefe4d10, type: 2}
+  paused: {fileID: 24500006, guid: c9d1d0b538e7fa44bb30ae43eefe4d10, type: 2}
