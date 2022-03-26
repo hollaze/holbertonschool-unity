@@ -55,7 +55,6 @@ public class FootstepsAudio : MonoBehaviour
                 playerAudioSource.clip = footstepsAudioClip[3];
                 break;
         }
-
         return (playerAudioSource.clip);
     }
 
@@ -69,6 +68,7 @@ public class FootstepsAudio : MonoBehaviour
         else if (PlayerController.m_ClipName == "Running")
         {
             playerAudioSource.outputAudioMixerGroup = audioMixerGroups[0];
+            playerAudioSource.volume = Random.Range(0.6f, 1f);
             playerAudioSource.PlayOneShot(FootstepsAudioClip());
         }
     }
