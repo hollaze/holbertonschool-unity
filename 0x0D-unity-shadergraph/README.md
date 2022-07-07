@@ -11,3 +11,9 @@
 - What is the difference between surface, vertex and fragment shaders
 - What is UV mapping
 - What is vertex animation
+
+<br/>
+
+## All shaders in this project
+
+![](Readme_images/All_shaders_gif.gif)
