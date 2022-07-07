@@ -17,3 +17,11 @@
 ## All shaders in this project
 
 ![](Readme_images/All_shaders_gif.gif)
+
+> In this gif, we can see some shader effects (In order):
+> - Glowing
+> - Glowing with some pulse
+> - Dissolving / Disintegrating
+> - Ice
+> - Hologram
+> - Waves
