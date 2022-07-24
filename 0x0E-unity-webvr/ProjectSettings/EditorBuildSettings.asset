@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/BasicBedroomPack-Mavi3D/DemoScene/DemoScene.unity
+    guid: 98a194d2d35852e41b2497db65e38188
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e8521296c463e494eaba70107601a30a, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bcfaf9a2a999a6d40a455d86993c684c, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5efb29f37008ced48b9eb482eaaf4e1c, type: 2}
