@@ -1,0 +1,38 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+/// <summary>
+/// Handle the MainMenu buttons
+/// </summary>
+public class MainMenu : MonoBehaviour
+{
+
+    /// <summary>
+    /// Select the level you want to go
+    /// </summary>
+    /// <param name="level">level wanted</param>
+    public void LevelSelect(int level)
+    {
+        SceneManager.LoadScene(level);
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    /// <summary>
+    /// Go to Options scene and get last scene
+    /// </summary>
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+        PlayerPrefs.SetInt("last_scene", SceneManager.GetActiveScene().buildIndex);
+    }
+
+    /// <summary>
+    /// Exit game
+    /// </summary>
+    public void Exit()
+    {
+        Application.Quit();
+        Debug.Log("Exited");
+    }
+
+}
